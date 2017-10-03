@@ -45,6 +45,7 @@ if (isset($_POST['submit'])) {
 }
 // LETOP: ik heb step toegevoegd, deze code was op zich correct, wie durft range met step=0.1 WEL aan?
 // MISSING: casting /  type juggling?
+// MISSING: Min en Max logica die WEL in html zit!
 // MISSING: beperking qua ruimte?
 /* End Code by Mark van Dooremaal */
 

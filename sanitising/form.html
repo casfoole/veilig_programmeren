@@ -1,42 +1,9 @@
 <!doctype html>
 <html>
    <head>
-      <style>
-	  body{
-		font-family: sans-serif;
-	  }
-         label{
-         color: #000730;
-         font-weight: bold;
-         display: block;
-         width: 150px;
-         float: left;
-         }
-         input,select,textarea{
-         width: 200px;
-         }
-         span{
-         width: 200px;
-         font-size: 8px;
-         }
-         p{
-         color: grey;
-         }
-		 input[type="submit"]{
-		 width: 100%;
-		 height: 50px;
-		 }
-		 
-		  table { border-collapse: collapse; text-align: left; width: 100%; }  
-		  table td,  table th { padding: 3px 10px; } 
-		  table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#ffffff; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; }  
-		  table thead th:first-child { border: none; } 
-		  table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 12px;font-weight: normal; } 
-		  table tbody tr:nth-child(odd) { background: #E1EEF4; color: #00496B; } table tbody td:first-child { border-left: none; } table tbody tr:last-child td { border-bottom: none; } table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;}  table tfoot td { padding: 0; font-size: 12px }  table tfoot td div{ padding: 2px; } table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; } table tfoot  li { display: inline; } table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; } table tfoot ul.active,  table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
-		 
-		 
-		 
-      </style>
+   <meta charset="utf-8" /> 
+	<title>Sanitising different user values by whitelisting</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
       <h1>Sanitising different user values by whitelisting</h1>
@@ -250,7 +217,7 @@
          <!--einde price, Luuk Chattillon-->
          <!-- Birthday, Zveau -->
          <tr>
-            <td>		         <label>Birthday (date, via text)</label></td>
+            <td> <label>Birthday (date, via text)</label></td>
             <td> <input name="birthdate" type="text"></input></td>
             <td> <span>Zveau</span></br> 
             </td>
@@ -295,19 +262,35 @@
             </td>
          </tr>
          <!-- Einde Bank, Martijn -->
+		 
          <!-- Range, Mark -->
          <tr>
             <td>
 				<label>Range:</label>
             </td>
             <td>
-				<input type="range" name="range" min="0" step="0.1" max="10">
+				<input type="range" name="range" min="0" max="10">
 			</td>
             <td>
                <span>Mark</span></br>
             </td>
          </tr>
          <!-- Einde Range, Mark -->
+	 
+         <!-- Range, nog niemand -->
+         <tr>
+            <td>
+				<label>Range:</label>
+            </td>
+            <td>
+				<input type="range" name="range" min="0" step="0.03" max="10">
+			</td>
+            <td>
+               Wie?Wie?Wie?</br>
+            </td>
+         </tr>
+         <!-- Einde Range, nog niemand -->
+
          <!-- tijd, Pepijn Kruiver -->			
          <tr>
             <td>
@@ -321,6 +304,7 @@
             </td>
          </tr>
          <!-- Einde tijd, Pepijn Kruiver-->
+		 
          <!-- text, Zahra-->			
          <tr>
             <td>		         
@@ -343,7 +327,7 @@
          Bijvoorbeeld, maak een whitelist voor: age,
 		 favoriete html tag, video timecode, adres, straat, huisnummer,
 		postcode, som, wiskundige formule, voornaam, achternaam, positie (lat, long), sterrenbeeld, svg, 
-		JSON, image, password, 
+		JSON, image, password, range zoals Mark deed, maar dan met step="0.1", 
 		browser and version, html, title, price, postcode... etc<br>
         Of verzin zelf iets.<br>
         Wat zou je in je carriere als webdeveloper als logische input van een gebruiker kunnen verwachten..?<br>
