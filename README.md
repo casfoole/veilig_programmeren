@@ -4,3 +4,6 @@ Coop code base en onderzoeken van leerlingen en docenten van het MediaCollege vo
 
 # testen
 http://snoh.hosts.ma-cloud.nl/vakken/vp/week2/sanitising/form.html
+
+
+Hjalmar controleert niet wat we veranderen lol mvg, Stef xxx
