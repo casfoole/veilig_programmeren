@@ -13,9 +13,40 @@ if(isset($_REQUEST["email"]))
 }
 /* End of code by Hjalmar Snoep */
 
+/* Start code by Stef van Egmond */
+
+$gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
+echo "Gender: " . $gender;
+//Did you assume my gender?
+
+/* End of code by Stef van Egmond */
+
 /*...
 	Jouw code toevoegen, zoals hierboven, a.u.b..
 */
+
+/* Code by Mark van Dooremaal */
+if (isset($_POST['submit'])) {
+  $range = filter_var($_POST["range"], FILTER_SANITIZE_NUMBER_INT);
+  echo $range;
+}
+/* End Code by Mark van Dooremaal */
+
+/* Start code by Simon Boerrigter  */
+if(isset($_REQUEST["date"]))
+{
+	$date = $_REQUEST["date"];
+	$dateCheck = $_REQUEST["date"];
+	$dateCheck = date_parse($dateCheck); // or date_parse_from_format("d/m/Y", $date);
+	if (checkdate($dateCheck['month'], $dateCheck['day'], $dateCheck['year'])) {
+		echo "Date: '".$date."'<br>";
+	} else {
+		echo "Invalid date";
+	}
+} else {
+	echo "Date: '' (not set)<br>";
+}
+/* End of code by Simon Boerrigter */
 
 echo "<a href='form.html'>back</a>";
 
