@@ -13,17 +13,26 @@ if(isset($_REQUEST["email"]))
 }
 /* End of code by Hjalmar Snoep */
 
-/* Start code by Stef van Egmond */
 
-$gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
-echo "Gender: " . $gender;
-//Did you assume my gender?
 
-/* End of code by Stef van Egmond */
 
 /*...
 	Jouw code toevoegen, zoals hierboven, a.u.b..
+	
+	Start leerling-code 
 */
+
+
+
+
+/* Start code by Stef van Egmond */
+$gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
+echo "Gender: " . $gender;
+//Did you assume my gender?
+/* End of code by Stef van Egmond */
+
+
+
 
 /* Code by Mark van Dooremaal */
 if (isset($_POST['submit'])) {
@@ -31,6 +40,9 @@ if (isset($_POST['submit'])) {
   echo $range;
 }
 /* End Code by Mark van Dooremaal */
+
+
+
 
 /* Start code by Simon Boerrigter  */
 if(isset($_REQUEST["date"]))
@@ -47,6 +59,10 @@ if(isset($_REQUEST["date"]))
 	echo "Date: '' (not set)<br>";
 }
 /* End of code by Simon Boerrigter */
+
+
+
+/* End of leerling code. */
 
 echo "<a href='form.html'>back</a>";
 
