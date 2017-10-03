@@ -32,6 +32,22 @@ if (isset($_POST['submit'])) {
 }
 /* End Code by Mark van Dooremaal */
 
+/* Start code by Simon Boerrigter  */
+if(isset($_REQUEST["date"]))
+{
+	$date = $_REQUEST["date"];
+	$dateCheck = $_REQUEST["date"];
+	$dateCheck = date_parse($dateCheck); // or date_parse_from_format("d/m/Y", $date);
+	if (checkdate($dateCheck['month'], $dateCheck['day'], $dateCheck['year'])) {
+		echo "Date: '".$date."'<br>";
+	} else {
+		echo "Invalid date";
+	}
+} else {
+	echo "Date: '' (not set)<br>";
+}
+/* End of code by Simon Boerrigter */
+
 echo "<a href='form.html'>back</a>";
 
 ?>
