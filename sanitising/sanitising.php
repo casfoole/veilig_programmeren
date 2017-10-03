@@ -29,6 +29,7 @@ if(isset($_REQUEST["email"]))
 $gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
 echo "Gender: " . $gender;
 //Did you assume my gender?
+// LEUKE grap, nu serieus: er zijn drie mogelijkheden, dus FILTER_SANITIZE_STRING is een beetje ruim.
 /* End of code by Stef van Egmond */
 
 
