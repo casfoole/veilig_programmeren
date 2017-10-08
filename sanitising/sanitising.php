@@ -25,7 +25,15 @@ if(isset($_REQUEST["email"]))
 */
 
 
-
+/* Start code by Maarten Kampmeijer */
+if(isset($_REQUEST["password"]))
+{
+	$password = mysqli_real_escape_string($dbc,trim($_POST['password']));
+	$hashed_password = hash('sha512',$password);
+	echo "Password: '".$password."'<br>";
+}else {
+	echo "Password: ''(not set)<br>";
+/* End of code by Maarten Kampmeijer */
 
 /* Start code by Stef van Egmond */
 $gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
