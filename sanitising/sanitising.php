@@ -57,9 +57,24 @@ if (isset($_POST['submit'])) {
 // MISSING: beperking qua ruimte?
 /* End Code by Mark van Dooremaal */
 
+/*Start code by Justin van der Kruit */
+if(isset($_REQUEST["datum"])) {
+    $date = $_REQUEST["date"];
 
+    list($y, $m, $d) = explode('-', $date);
 
+    if (checkdate($m, $d, $y)) {
+        echo "Datum: '".$date."'<br>";
+    } else {
+        echo "Niet geldige datum";
+    }
+} else {
+    echo "Datum: '' (niet ingevuld)<br>";
+}
+/*End code by Justin van der Kruit */
 
+	
+	
 /* Start code by Simon Boerrigter  */
 if(isset($_REQUEST["date"]))
 {
