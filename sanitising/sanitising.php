@@ -57,9 +57,24 @@ if (isset($_POST['submit'])) {
 // MISSING: beperking qua ruimte?
 /* End Code by Mark van Dooremaal */
 
+/*Start code by Justin van der Kruit */
+if(isset($_REQUEST["datum"])) {
+    $date = $_REQUEST["date"];
 
+    list($y, $m, $d) = explode('-', $date);
 
+    if (checkdate($m, $d, $y)) {
+        echo "Datum: '".$date."'<br>";
+    } else {
+        echo "Niet geldige datum";
+    }
+} else {
+    echo "Datum: '' (niet ingevuld)<br>";
+}
+/*End code by Justin van der Kruit */
 
+	
+	
 /* Start code by Simon Boerrigter  */
 if(isset($_REQUEST["date"]))
 {
@@ -78,6 +93,35 @@ if(isset($_REQUEST["date"]))
 // verder: nice!
 /* End of code by Simon Boerrigter */
 
+  /* Start code by Peter Boersma */
+if(isset($_REQUEST["btcnAddress"]))
+{
+	$btcn = $_REQUEST["btcnAddress"];
+if($btcn = preg_match('!?/.>,<:;"{}[]\|=+-_)(#$%^&*', $btcn,0)){
+	$btcn = substr($btcn,0,36);// no longer than 36 characters.
+	echo "Bitcoin Address: '".$btcn."'<br>"; 
+}else{
+	echo "Invalid"
+}
+}else{
+	echo "Bitcoin Address: '' (Invalid)<br>";
+}
+	
+/* End of code by Peter Boersma */
+
+/* Start code by Jesse Izeboud  */
+if(isset($_REQUEST["animals"])) {
+	$options = array("Giraffe","Deer","Pig");
+	$animal = $_POST["animals"]);
+	$search = array('@<script[^>]*?>.*?</script>@si','@<[\/\!]*?[^<>]*?>@si','@<style[^>]*?>.*?</style>@siU','@<![\s\S]*?--[ \t\n\r]*>@');
+        $animal = preg_replace($search, '', $animal);
+	if (in_array($animal, $people)) {
+		echo $animal;
+	} else {
+		echo "Invalid Animal";
+	}
+}
+/* End of code by Jesse Izeboud */
 
 
 /* End of leerling code. */
