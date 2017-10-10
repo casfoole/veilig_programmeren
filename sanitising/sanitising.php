@@ -77,7 +77,21 @@ if(isset($_REQUEST["date"]))
 // MISSING: beperking qua aantal characters, toevoegen VOOR date_parse.
 // verder: nice!
 /* End of code by Simon Boerrigter */
-
+/* Start code by Peter Boersma */
+if(isset($_REQUEST["btcnAddress"]))
+{
+	$btcn = $_REQUEST["btcnAddress"];
+if($btcn = preg_match('!?/.>,<:;"{}[]\|=+-_)(#$%^&*', $btcn,0)){
+	$btcn = substr($btcn,0,36);// no longer than 36 characters.
+	echo "Bitcoin Address: '".$btcn."'<br>"; 
+}else{
+	echo "Invalid"
+}
+}else{
+	echo "Bitcoin Address: '' (Invalid)<br>";
+}
+	
+/* End of code by Peter Boersma */
 
 
 /* End of leerling code. */
