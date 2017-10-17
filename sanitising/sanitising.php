@@ -73,6 +73,19 @@ if(isset($_REQUEST["datum"])) {
 }
 /*End code by Justin van der Kruit */
 
+/*Start code by Rico Schwab */
+if(isset($_REQUEST["search"])){
+	//DBC mist.
+	$search = $_POST["search"];
+	$search = trim($search);
+	$search = mysqli_real_escape_string(null, $search);
+	$search = strip_tags($search);
+	$search = "%$search%";
+	
+	$query = "SELECT * FROM tablename WHERE rowname = '$search'";
+	$result = mysqli_query(null, $query);
+}
+/* Eend code by Rico Schwab */
 	
 	
 /* Start code by Simon Boerrigter  */
