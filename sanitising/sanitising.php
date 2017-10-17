@@ -57,6 +57,33 @@ if (isset($_POST['submit'])) {
 // MISSING: beperking qua ruimte?
 /* End Code by Mark van Dooremaal */
 
+
+
+
+
+
+
+
+
+
+/* Start code by Dani de Jong*/
+if(isset($_POST['time'])) {
+	$time = $_POST['time'];
+	if (preg_match("/^(2[0-3]|[01]?[0-9]):[0-5][0-9]$/", $time)) {
+		echo $time;
+	}
+}
+/* End Code by Dani de Jong*/
+
+
+
+
+
+
+
+
+
+
 /*Start code by Justin van der Kruit */
 if(isset($_REQUEST["datum"])) {
     $date = $_REQUEST["date"];
