@@ -1,102 +1,385 @@
 <!doctype html>
 <html>
-	<head>
-	<style>
-		label{
-color: #B4886B;
-font-weight: bold;
-display: block;
-width: 150px;
-float: left;
-		}
-		input,select{
-			width: 200px;
-		}
-		span{
-			width: 200px;
-			font-size: 8px;
-		}
-		p{
-		color: grey;
-		}
-	</style>
-	</head>
-	<body>
-		<form action="sanitising.php" method="POST">
-		
-<!-- Number, int  CEM -->			
-    <label>Number: </label> <input name="" type="text"></input><span>Cem den Ouden</span></br>
-<!-- Einde Number, int  CEM -->
+   <head>
+   <meta charset="utf-8" /> 
+	<title>Sanitising different user values by whitelisting</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+      <h1>Sanitising different user values by whitelisting</h1>
+      <form action="sanitising.php" method="POST">
+         <table>
+		 <thead>
+         <tr>
+            <th>Input Type</th>
+            <th>Widget</th>
+            <th>by..</th>
+         </tr>
+		 </thead>
+		 <tbody>
+         <!-- Number, int  CEM -->			
+         <tr>
+            <td>
+               <label>Number: </label>
+            </td>
+            <td>
+               <input name="" type="text"></input>
+            </td>
+            <td>
+               <span>Cem den Ouden</span>
+            </td>
+         </tr>
+         <!-- Einde Number, int  CEM -->
+         <!-- Beau, telefoonnummer -->			
+         <tr>
+            <td>
+               <label>Telefoonnummer</label> 
+            </td>
+            <td>
+               <input name="phonenr" type="text">
+            </td>
+            <td>
+               <span>Beau</span> 
+            </td>
+         </tr>
+         <!-- Einde Beau, telefoonnummer-->
+		 
+         <!-- Maarten, password -->
+         <tr>
+            <td>
+               <label>Password: </label>
+            </td>
+            <td>
+				<input type="password" name="password"></input>
+            </td>
+            <td> <span>Maarten</span>
+            </td>
+         </tr>
+         <!-- Einde Maarten, password -->
+         <!-- Color, Max -->	
+         <tr>
+            <td>		
+               <label>Color</label> 	
+            </td>
+            <td>
+               <input name="" type="color"></input>
+            </td>
+            <td> 
+               <span>Cem den Ouden,Max Verhaagen , neem even contact met elkaar op om dit te resolven</span> 
+            </td>
+         </tr>
+         <!-- Einde Color, Max -->
+         <!-- Email, Hjalmar -->	
+         <tr>
+            <td>				 
+               <label>Email: </label>
+            </td>
+            <td> <input name="email" type="text"></input></td>
+            <td> <span>Hjalmar</span></br>
+            </td>
+         </tr>
+         <!-- Einde Email, Hjalmar -->			
+         <!-- username, ilias -->			
+         <tr>
+            <td>				
+               <label>username: </label>
+            </td>
+            <td> <input name="" type="text"></input></td>
+            <td> <span>Ilias</span></br>
+            </td>
+         </tr>
+         <!-- Einde username, ilias -->	
+         <!-- URL, Bart Middelberg -->			
+         <tr>
+            <td>		         <label>URL</label></td>
+            <td> <input name="" type="text"></input></td>
+            <td> <span> Bart</span></br>
+            </td>
+         </tr>
+         <!-- Einde URL, Bart Middelberg -->			
+         <!-- arthur, checkbox -->			
+         <tr>
+            <td>		<label>checkbox</label> </td>
+            <td> <input type="checkbox" name="vehicle" value="Bike"> I have a bike </td>
+            <td> <span> arthur</span></br>
+            </td>
+         </tr>
+         <!-- Einde arthur, checkbox -->
+         <!-- Rekeningnummer, Dalí -->			
+         <tr>
+            <td>		<label>Rekeningnummer</label></td>
+            <td> <input name="" type="text"></input></td>
+            <td> <span> Dalí</span></br>
+            </td>
+         </tr>
+         <!-- Einde Rekeningnummer, Dalí -->			
+         <!-- ID, Juul -->			
+         <tr>
+            <td>		<label>ID:</label></td>
+            <td> <input name="" type="text"></input></td>
+            <td> <span>Juul</span></br>
+            </td>
+         </tr>
+         <!-- Einde ID, Juul -->			
+         <!-- Bestand, Noah -->			
+         <tr>
+            <td>		<label>Bestand:</label>
+			</td>
+			<td>
+				<input name="myFile" type="file"></input>
+			</td>
+            <td> <span>Noah</span></br> 
+            </td>
+         </tr>
+         <!-- Einde Bestand, Noah -->			
+         <!-- Search, Rico Schwab -->			
+         <tr>
+            <td>		<label>Search:</label></td>
+            <td> <input name="searchField" type="search"></input></td>
+            <td> <span>Rico</span></br>
+            </td>
+         </tr>
+         <!-- Einde Search, Rico Schwab -->
+         <!-- Postcode, Dylan Struik-->			
+         <tr>
+            <td>		<label>Postcode</label></td>
+            <td> <input name="postcode" type="text"></input></td>
+            <td> <span>Dylan</span></br>
+            </td>
+         </tr>
+         <!-- Einde Postcode, Dylan Struik -->	
+         <!-- Land, Hicham -->		
+         <tr>
+            <td>
+               <label>Land:</label> 
+			 </td>
+			 <td>
+               <select name="country">
+                  <option>Nederland</option>
+                  <option>Belgie</option>
+               </select>
+            </td>
+            <td> <span>Hicham</span></br>
+            </td>
+         </tr>
+         <!-- Einde Land, Hicham -->			
+         <!-- Time, Daní-->
+         <tr>
+            <td>
+				<label>Tijd:</label>
+			</td>
+			<td>
+				<input type="time" value="time" name="time" />
+			</td>
+            <td>
+				<span>Dani</span>
+            </td>
+         </tr>
+         <!-- Einde Tijd, Daní -->
+         <!-- Geslacht, Stef -->
+         <tr>
+            <td>	
+				<label>Geslacht:</label>
+			</td>
+			<td>
+               <input type="radio" name="gender" value="male"> Male<br>
+               <input type="radio" name="gender" value="female"> Female<br>
+               <input type="radio" name="gender" value="other"> Other
+            </td>
+            <td>
+				<span>Stef</span>
+            </td>
+         </tr>
+         <!-- Einde geslacht -->
+         <!-- Price, Luuk Chattillon-->
+         <tr>
+            <td>
+               <label>Price:</label>
+            </td>
+            <td>
+               <input type="number" min="0" max="10000">
+            </td>
+            <td> 
+				<span>luuk</span>
+            </td>
+         </tr>
+		<tr>
+            <td>
+               <label>Birthday (date and time):</label>
+            </td>
+            <td> 
+				<input type="datetime-local" name="bdaytime">
+			</td>
+            <td> 
+				<span>luuk</span>
+            </td>
+         </tr>
+         <!--einde price, Luuk Chattillon-->
+         <!-- Birthday, Zveau -->
+         <tr>
+            <td> <label>Birthday (date, via text)</label></td>
+            <td> <input name="birthdate" type="text"></input></td>
+            <td> <span>Zveau</span></br> 
+            </td>
+         </tr>
+         <!-- Einde Birthday, Zveay -->
+         <!-- date, Simon -->
+         <tr>
+            <td>
+				<label>Date (date via html5 input date):</label>
+			</td>
+            <td>
+				<input type="date" name="date"></input>
+			</td>
+            <td> 
+				<span>Simon</span>
+            </td>
+         </tr>
+         <!-- Einde date, Simon -->
+         <!-- Date, Justin van der Kruit -->
+         <tr>
+            <td>		        
+				<label>Verjaardag (date via html5 input date):</label>
+			</td>
+			<td>
+				<input type="date" name="datum">
+			</td>
+            <td> 
+				<span> Justin</span>
+            </td>
+         </tr>
+         <!-- Einde date, Justin van der Kruit -->
+         <!-- Bank, Martijn -->			
+         <tr>
+            <td>
+				<label>ID:</label>
+			</td>
+            <td>
+				<input name="BAnkName" type="text"></input>
+			</td>
+            <td>
+				<span>Martijn</span>
+            </td>
+         </tr>
+         <!-- Einde Bank, Martijn -->
+		 
+         <!-- Range, Mark -->
+         <tr>
+            <td>
+				<label>Range:</label>
+            </td>
+            <td>
+				<input type="range" name="range" min="0" max="10">
+			</td>
+            <td>
+               <span>Mark</span></br>
+            </td>
+         </tr>
+         <!-- Einde Range, Mark -->
+	 
+         <!-- Range, nog niemand -->
+         <tr>
+            <td>
+				<label>Range:</label>
+            </td>
+            <td>
+				<input type="range" name="range" min="0" step="0.03" max="10">
+			</td>
+            <td>
+               Wie?Wie?Wie?</br>
+            </td>
+         </tr>
+         <!-- Einde Range, nog niemand -->
 
-  <!-- Color, Max -->			
-		<label>Color</label> <input name="" type="color"></input><span>Cem den Ouden,Max Verhaagen</span></br> 
-<!-- Einde Color, Max -->
-			
-<!-- Email, Hjalmar -->			
-		<label>Email: </label> <input name="email" type="text"></input><span>Hjalmar</span></br>
-<!-- Einde Email, Hjalmar -->			
+         <!-- tijd, Pepijn Kruiver -->			
+         <tr>
+            <td>
+				<label>Selecteer een tijd HTML5 input:</label>
+            </td>
+            <td> 
+				<input type="time" name="usr_time">
+			</td>
+            <td>
+				<span>Pepijn Kruiver</span>
+            </td>
+         </tr>
+         <!-- Einde tijd, Pepijn Kruiver-->
+		 
+         <!-- text, Zahra-->			
+         <tr>
+            <td>		         
+				<label>Typ hier uw opmerking (geen html):</label> 
+			</td>
+			<td>
+               <textarea name="opmerking"></textarea>
+            </td>
+            <td> <span>Zahra</span></br>
+            </td>
+         </tr>
+         <!-- Einde text, Zahra-->
 
-<!-- username, ilias -->			
-		<label>username: </label> <input name="" type="text"></input><span>Ilias</span></br>
-<!-- Einde username, ilias -->		
-	
-<!-- URL, Bart Middelberg -->			
-		<label>URL</label> <input name="" type="text"></input><span> Bart</span></br>
-<!-- Einde URL, Bart Middelberg -->			
 
-<!-- Rekeningnummer, Dalí -->			
-		<label>Rekeningnummer</label> <input name="" type="text"></input><span> Dalí</span></br>
-<!-- Einde Rekeningnummer, Dalí -->			
+	<!-- Start Bitcoin Address, Peter -->
+	<tr>
+            <td>		         
+				<label>Bitcoin Address</label> 
+			</td>
+			<td>
+               <input type="text" name="btcnAddress" placeholder="Bitcoin Address"/>
+            </td>
+            <td> <span>Peter</span></br>
+            </td>
+         </tr>
+<!-- Einde Bitcoin Address, Peter -->
 
-<!-- Rekeningnummer, Noah -->			
-    <label>Bestand:</label><input name="myFile" type="file"></input><span>Noah</span></br> 
-<!-- Einde Rekeningnummer, Noah -->			
 
-<!-- Rekeningnummer, Juul -->			
-		<label>ID:</label> <input name="" type="text"></input><span>Juul</span></br>
-<!-- Einde Rekeningnummer, Juul -->		
 
-<!-- reset, job -->			
-		<label>reset</label> <input name="" type="reset"></input><span>Job</span></br>
-<!-- Einde reset, job -->
-
-<!-- Land, Hicham -->			
-		<label>Land:</label> <select name="country"><option>Nederland</option><option>Belgie</option></select><span>Hicham</span></br>
-<!-- Einde Land, Hicham -->
+	<!-- Select, Jesse Izeboud -->			
+         <tr>
+            <td>		         
+	    	<label>Select an animal</label> 
+	    </td>
+	    <td>
+            	<select name="animals">
+		  <option value="Giraffe">Giraffe</option>
+	       	  <option value="Deer">Deer</option>
+	          <option value="Pig">Pig</option>
+		</select>
+            </td>
+            <td> <span>Jesse Izeboud</span></br>
+            </td>
+         </tr>
+         <!-- Einde Select, Jese Izeboud-->
 
 <!-- Time, Daní-->
 		<label>Tijd:</label><input type="time" value="00:00" name="time" /><br />
 <!-- Einde Tijd, Daní -->
+         <tr> <td colspan="3">
+         <input type="submit"></submit>	
+         </td></tr>
 
-
-<!-- Geslacht, Stef -->
-		<label>Geslacht:</label>
-		<input type="radio" name="gender" value="male"> Male<br>
-  		<input type="radio" name="gender" value="female"> Female<br>
- 		<input type="radio" name="gender" value="other"> Other
-<!-- Einde geslacht -->
-
-<!-- Price, Luuk Chattillon-->
-<label>Price:</label> <input type="number" min="0" max="10000">
-<!--einde price, Luuk Chattillon-->
-
-
-  <!-- Range, Mark -->
-  <label>Range:</label><input type="range" name="range" min="0" max="10"><span>Mark</span></br>
-  <!-- Einde Range, Mark -->
-		<input type="submit"></submit>	
-		</form>
-		<p>
-		Bijvoorbeeld, maak een whitelist voor: date, age,favoriete html tag, tijd, timecode, adres, straat, huisnummer, telefoonnummer, postcode, som, wiskundige formule, voornaam, achternaam, float, number, color, bitcoinadres, id, naam, email, url, positie (lat, long), geslacht, sterrenbeeld, svg, image, password, browser and version, html, title, price, postcode... etc<br>
-		Verzin zelf iets.<br>
-		Wat zou je in je carriere als webdeveloper als input van de gebruiker verwachten..<br>
-		<h2>Inspiratie</h2>
-		<ul>
-		<li><a href="https://www.w3schools.com/html/html_form_input_types.asp">Inspiratie 1</a></li>
-		<li><a href="http://php.net/manual/en/language.variables.external.php">Inspiratie 2</a></li>
-		<li><a href="http://php.net/manual/en/filter.filters.sanitize.php"> php sanitization filters </a></li>
-		
-		</ul>
-		</p>
-	</body>
+	 <!-- Begin reset, Jesse de Jong -->
+	 <td><tr>
+		<input type="reset"> <!-- Resets the input fields to their original value -->
+	 </td></tr>
+	 <!-- Einde reset, Jesse de Jong -->
+		 </tbody>
+		 </table>
+      </form>
+      <p>
+         Bijvoorbeeld, maak een whitelist voor: age,
+		 favoriete html tag, video timecode, adres, straat, huisnummer,
+		postcode, som, wiskundige formule, voornaam, achternaam, positie (lat, long), sterrenbeeld, svg, 
+		JSON, image, password, range zoals Mark deed, maar dan met step="0.1", 
+		browser and version, html, title, price, postcode... etc<br>
+        Of verzin zelf iets.<br>
+        Wat zou je in je carriere als webdeveloper als logische input van een gebruiker kunnen verwachten..?<br>
+      <h2>Inspiratie</h2>
+      <ul>
+         <li><a href="https://www.w3schools.com/html/html_form_input_types.asp">Inspiratie 1</a></li>
+         <li><a href="http://php.net/manual/en/language.variables.external.php">Inspiratie 2</a></li>
+         <li><a href="http://php.net/manual/en/filter.filters.sanitize.php"> php sanitization filters </a></li>
+      </ul>
+      </p>
+   </body>
 </html>
