@@ -48,13 +48,13 @@ echo "Gender: " . $gender;
 
 /* Code by Mark van Dooremaal */
 if (isset($_POST['submit'])) {
-  $range = filter_var($_POST["range"], FILTER_SANITIZE_NUMBER_INT);
+  if ($_POST['range'] > 1 && $_POST['range'] < 10 ) {
+    $range = preg_replace('/[^0-9.]*/','',filter_var($_POST['range'], FILTER_SANITIZE_NUMBER_INT));
+  } else {
+    echo "number is not between 1-10";
+  }
   echo $range;
 }
-// LETOP: ik heb step toegevoegd, deze code was op zich correct, wie durft range met step=0.1 WEL aan?
-// MISSING: casting /  type juggling?
-// MISSING: Min en Max logica die WEL in html zit!
-// MISSING: beperking qua ruimte?
 /* End Code by Mark van Dooremaal */
 
 
