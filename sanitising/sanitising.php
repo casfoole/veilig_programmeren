@@ -26,16 +26,20 @@ if(isset($_REQUEST["email"]))
 
 
 /* Start code by Maarten Kampmeijer */
+// let op passwords zijn een uitzondering
+// ze hoeven niet sanitised te worden
+// ze worden gehashed en NOOIT in originele vorm opgeslagen.
 if(isset($_REQUEST["password"]))
 {
-	$password = mysqli_real_escape_string($dbc,trim($_POST['password']));
-	$hashed_password = hash('sha512',$password);
-	echo "Password: '".$password."'<br>";
+	//$password = mysqli_real_escape_string($dbc,trim($_POST['password']));
+	$hashed_password = password_hash(PASSWORD_DEFAULT ,$password); // levert 255 characters op!
+	echo "Password_hashed: '".$password."'<br>";
 }else {
-	echo "Password: ''(not set)<br>";
+	echo "Password_hashed: ''(not set)<br>";
 /* End of code by Maarten Kampmeijer */
 
 /* Start code by Stef van Egmond */
+	// ik mis de isset constructie, dit breekt potentieel de code.
 $gender = filter_var ( $_REQUEST["gender"], FILTER_SANITIZE_STRING);;
 echo "Gender: " . $gender;
 //Did you assume my gender?
