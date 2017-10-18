@@ -171,6 +171,16 @@ if(isset($_REQUEST["animals"])) {
 	}
 }
 /* End of code by Jesse Izeboud */
+/* Start code by Cas Foole */
+	if(isset($_POST['submit'])){
+$_postcode = $_POST['postcode'];
+  if  (preg_match('%[0-9]{4}[A-Z]{2}%i',$_postcode)){
+        echo "goeie postcode.";
+    }else {
+      echo "foute postcode"; 
+  }
+}
+/* End of code by Cas Foole */
 
 
 /* End of leerling code. */
